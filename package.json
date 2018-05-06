@@ -1,0 +1,22 @@
+{
+  "name": "connection-pool-performance-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barend-erasmus/connection-pool-performance-testing.git"
+  },
+  "author": "Barend Erasmus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barend-erasmus/connection-pool-performance-testing/issues"
+  },
+  "homepage": "https://github.com/barend-erasmus/connection-pool-performance-testing#readme",
+  "devDependencies": {
+    "@types/node": "^10.0.4"
+  }
+}
