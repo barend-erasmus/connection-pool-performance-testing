@@ -14,7 +14,7 @@ This implementation created a new socket connection for every request.
 
 ## Connection Pool Implementation
 
-This implementation created a single socket connection which gets reused for every request. To allow for multiple requests at once, the `Object Pool Design Pattern` can be implemented and can be found here:
+This implementation created a single socket connection which gets reused for every request. To allow for multiple requests at once, the `Object Pool Design Pattern` can be implemented which can be found here:
 
 * [CSharp](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/ObjectPool.cs)
 * [node.js](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/object-pool.ts)
