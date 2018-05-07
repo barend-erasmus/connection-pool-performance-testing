@@ -1,6 +1,8 @@
 # Connection Pool Performance Testing
 
-## Non Connection Pool Implementation
+## Non-Connection Pool Implementation
+
+This implementation created a new socket connection for every request.
 
 | Number of Request | Milliseconds per Request | Requests per Second |
 | ----------------- | ------------------------ | ------------------- |
@@ -12,6 +14,11 @@
 
 ## Connection Pool Implementation
 
+This implementation created a single socket connection which gets reused for every request. To allow for multiple requests at once, the `Object Pool Design Pattern` can be implemented and can be found here:
+
+* [CSharp](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/ObjectPool.cs)
+* [node.js](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/object-pool.ts)
+
 | Number of Request | Milliseconds per Request | Requests per Second |
 | ----------------- | ------------------------ | ------------------- |
 | 1000              | 0.111                    | 9009.009            |
@@ -21,6 +28,8 @@
 | 5000              | 0.078                    | 12722.646           | 
 
 ## Conclusion
+
+By making use of a single socket connection, we have gained an average of 79.06 % in performance.
 
 | Number of Request |                      |
 | ----------------- | -------------------- |
