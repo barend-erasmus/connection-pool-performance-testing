@@ -1,8 +1,17 @@
 # Connection Pool Performance Testing
 
+We often, unconsciously, create a new socket connection for each HTTP Requests, Database Requests, TCP Requests and Cache Requests without knowing the consequences. Socket connections are considered an expensive operation as it requires a three-ways handshake, apart from the addtional CPU and memory, before any payload packets can be sent
+
+This can be easily optimized by making use of the `Object Pool Design Pattern`.
+
+Here is a few implementations of the `Object Pool Design Pattern`
+
+* [CSharp](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/ObjectPool.cs)
+* [node.js](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/object-pool.ts)
+
 ## Non-Connection Pool Implementation
 
-This implementation created a new socket connection for every request.
+Below are the metrics for creating a new socket connection for each request.
 
 | Number of Request | Milliseconds per Request | Requests per Second |
 | ----------------- | ------------------------ | ------------------- |
@@ -14,10 +23,7 @@ This implementation created a new socket connection for every request.
 
 ## Connection Pool Implementation
 
-This implementation created a single socket connection which gets reused for every request. To allow for multiple requests at once, the `Object Pool Design Pattern` can be implemented which can be found here:
-
-* [CSharp](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/ObjectPool.cs)
-* [node.js](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/object-pool.ts)
+Below are the metrics creating a single socket connection and reusing. For parallel requests, make use of the `Object Pool Design Pattern`.
 
 | Number of Request | Milliseconds per Request | Requests per Second |
 | ----------------- | ------------------------ | ------------------- |
