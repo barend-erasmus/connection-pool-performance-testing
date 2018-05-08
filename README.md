@@ -1,10 +1,10 @@
 # Connection Pool Performance Testing
 
-We often, unconsciously, create a new socket connection for each HTTP Requests, Database Requests, TCP Requests and Cache Requests without knowing the consequences. Socket connections are considered an expensive operation as it requires a three-ways handshake, apart from the addtional CPU and memory, before any payload packets can be sent
+We often, unconsciously, create a new socket connection for each HTTP Requests, Database Requests, TCP Requests and Cache Requests without knowing the consequences. Socket connections are considered an expensive operation as it requires a three-ways handshake, apart from the additional CPU and memory, before any payload packets can be sent.
 
 This can be easily optimized by making use of the `Object Pool Design Pattern`.
 
-Here is a few implementations of the `Object Pool Design Pattern`
+Here is a few implementations of the `Object Pool Design Pattern`.
 
 * [CSharp](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/ObjectPool.cs)
 * [node.js](https://github.com/barend-erasmus/connection-pool-performance-testing/blob/master/src/examples/object-pool.ts)
